@@ -1,0 +1,4 @@
+pyxhook
+pywinctl
+requests
+discord-webhook
